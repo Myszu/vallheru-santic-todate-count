@@ -152,7 +152,7 @@ if ($hour + $hours >= 24)
 // CONVERT DAYS TO MONTHS
 $run = 1;
 
-while ($run <= $days)
+while ($run <= ($day + $days))
 {
     if ($e_month == 1 || $e_month == 3 || $e_month == 5 || $e_month == 7 || $e_month == 8 || $e_month == 10) // CHECKING WHAT MONTH IS NOW - THIS DETERMINES HOW MANY DAYS ARE NEEDED TO CONVERT TO 1 MONTH 
     {
@@ -183,11 +183,12 @@ while ($run <= $days)
             $e_days = ($days - 31);
             // FINAL DAY VALUE IS EQUAL TO CURRENT DAY PLUS CLONED DAYS TO ADD
             $f_day = $day + $e_days;
-            
+            // ENDING THE LOOP
             break;
         }
         else // IF THERE IS NOT ENOUGH DAYS TO ADD, TO FORM NEW MONTH, BREAK THE LOOP
         {
+        // ENDING THE LOOP
         break; 
         }
     }
@@ -225,12 +226,13 @@ while ($run <= $days)
         }
         else
         {
+        // ENDING THE LOOP
         break;    
         }
     }
     elseif ($e_month == 2) // CHECKING WHAT MONTH IS NOW - THIS DETERMINES HOW MANY DAYS ARE NEEDED TO CONVERT TO 1 MONTH 
     {
-        if ($year % 4 == 0) // CHEKING IF IT IS A LEAP YEAR
+        if ($f_year % 4 == 0) // CHEKING IF IT IS A LEAP YEAR
         {
             if ($days >= 29) // CHECKING IF THERE IS MORE DAYS TO ADD, THEN THERE ARE IN CURRENT MONTH
             {
@@ -264,10 +266,11 @@ while ($run <= $days)
             }
             else
             {
+            // ENDING THE LOOP
             break;    
             }
         }
-        elseif ($year % 4 != 0)// CHEKING IF IT IS NOT A LEAP YEAR
+        elseif ($f_year % 4 != 0)// CHEKING IF IT IS NOT A LEAP YEAR
         {
             if ($days >= 28) // CHECKING IF THERE IS MORE DAYS TO ADD, THEN THERE ARE IN CURRENT MONTH
             {
@@ -301,6 +304,7 @@ while ($run <= $days)
             }
             else
             {
+            // ENDING THE LOOP
             break;    
             }
         }
@@ -343,6 +347,7 @@ while ($run <= $days)
         }
         else
         {
+        // ENDING THE LOOP
         break;    
         }
     }
