@@ -127,7 +127,7 @@ else
 if ($minute + $minutes >= 60)
 {
     $f_hour += intval(($minute + $minutes) / 60);
-    $f_minute = (($minute + $minutes) % 60);
+    $f_minute = (($minute + $minutes) % 60)+1;
 }
 
 // CONVERT HOURS TO DAYS
@@ -146,7 +146,7 @@ else
 if ($hour + $hours >= 24)
 {
     $f_day += intval(($hour + $hours) / 24);
-    $f_hour = (($hour + $hours) % 24);
+    $f_hour = (($hour + $hours) % 24)+1;
 }
 
 // CONVERT DAYS TO MONTHS
